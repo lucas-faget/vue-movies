@@ -1,9 +1,13 @@
 <script>
+    import PosterList from '@/components/PosterList.vue';
+    
     export default {
+    components: { PosterList },
         data() {
             return {
                 movieRepository: window.movieRepository,
-                search: ""
+                search: "",
+                posterList: ["interstellar.jpg", "seul-sur-mars.jpg", "interstellar.jpg", "ad-astra.jpg", "interstellar.jpg"]
             }
         },
         computed: {
@@ -25,4 +29,6 @@
     <h1>Home</h1>
 
     <button type="button" @click="addMovie()">Ajouter un film</button>
+
+    <poster-list :posterList="posterList"></poster-list>
 </template>
