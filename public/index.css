@@ -1,3 +1,7 @@
+:root {
+    --color-gold: hsl(51,100%,80%);
+}
+
 * {
     color: #fff;
     background-color: #000;

@@ -1,8 +1,9 @@
 <script>
     import PosterList from '@/components/PosterList.vue';
+    import OutlineText from '@/components/OutlineText.vue';
     
     export default {
-    components: { PosterList },
+        components: { PosterList, OutlineText },
         data() {
             return {
                 movieRepository: window.movieRepository,
@@ -27,8 +28,13 @@
 
 <template>
     <h1>Home</h1>
+    <outline-text text="VUE-MOVIES" fontSize="50" color="white"></outline-text>
 
     <button type="button" @click="addMovie()">Ajouter un film</button>
 
     <poster-list :posterList="posterList"></poster-list>
 </template>
+
+<style scoped>
+    
+</style>
