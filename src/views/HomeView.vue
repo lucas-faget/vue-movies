@@ -18,9 +18,9 @@
             }
         },
         methods: {
-            addMovie() {
-                // redirect to route named movie-add
-                this.$router.push({ name: "movie-add" });
+            goToMovieList() {
+                // redirect to route named movie-list
+                this.$router.push({ name: "movie-list" });
             }
         }
     }
@@ -36,7 +36,7 @@
                 <br />
                 <outline-text text="Votre base de données de films." fontSize="46" color="white"></outline-text>
             </p>
-            <custom-button text="Ajouter un film" @click="addMovie()"></custom-button>
+            <custom-button text="Voir les films" @click="goToMovieList()"></custom-button>
         </div>
 
         <poster-list :posterList="posterList"></poster-list>
