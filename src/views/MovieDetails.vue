@@ -1,5 +1,8 @@
 <script>
+    import CustomButton from '@/components/CustomButton.vue';
+
     export default {
+        components: { CustomButton },
         data() {
             return {
                 movieRepository: window.movieRepository,
@@ -45,11 +48,11 @@
             <br><br>
 
             <router-link :to="'/movies/' + movie.id + '/edit'">
-                <input type="button" value="Editer" />
+                <custom-button text="Editer"></custom-button>
             </router-link>
             <br><br>
 
-            <input type="button" value="Supprimer" @click="deleteMovie(movie.id)"/>
+            <custom-button text="Supprimer" @click="deleteMovie(movie.id)"></custom-button>
         </div>
     </div>
 </template>
