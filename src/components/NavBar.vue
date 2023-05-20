@@ -9,7 +9,9 @@ import OutlineText from './OutlineText.vue'
 <template>
     <nav class="nav-bar">
         <div class="logo">
-            <outline-text text="VUE-MOVIES" fontSize="30" color="white"></outline-text>
+            <router-link to="/" style="text-decoration: none;">
+                <outline-text text="VUE-MOVIES" fontSize="30" color="white"></outline-text>
+            </router-link>
         </div>
         <ul class="menu">
             <router-link to="/" style="text-decoration: none;">
