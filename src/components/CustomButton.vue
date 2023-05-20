@@ -17,7 +17,7 @@
 
 <style scoped>
     .custom-btn {
-        width: 130px;
+        min-width: 130px;
         height: 40px;
         color: #000;
         border-radius: 5px;

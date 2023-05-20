@@ -45,7 +45,7 @@
 
 <style scoped>
     .poster-list {
-        background: red;
+        /* background: red; */
         display: flex;
         justify-content: center;
         align-items: center;

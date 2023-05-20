@@ -22,15 +22,13 @@
 </script>
 
 <template>
-    <p :class="['outline-text', outlineColorClass]" :style="fontSizeStyle">
+    <span :class="['outline-text', outlineColorClass]" :style="fontSizeStyle">
         {{ text }}
-    </p>
+    </span>
 </template>
 
 <style scoped>
     .outline-text {
-        margin: 0;
-        padding: 0;
         color: #000;
     }
 

@@ -1,9 +1,10 @@
 <script>
     import PosterList from '@/components/PosterList.vue';
     import OutlineText from '@/components/OutlineText.vue';
+    import CustomButton from '@/components/CustomButton.vue';
     
     export default {
-        components: { PosterList, OutlineText },
+        components: { PosterList, OutlineText, CustomButton },
         data() {
             return {
                 movieRepository: window.movieRepository,
@@ -27,14 +28,42 @@
 
 
 <template>
-    <h1>Home</h1>
-    <outline-text text="VUE-MOVIES" fontSize="50" color="white"></outline-text>
+    <div class="home">
+        <div class="title">
+            <p>
+                <outline-text text="BIENVENUE SUR " fontSize="50" color="white"></outline-text>
+                <outline-text text="VUE-MOVIES" fontSize="50" color="gold"></outline-text>
+                <br />
+                <outline-text text="Votre base de données de films." fontSize="46" color="white"></outline-text>
+            </p>
+            <custom-button text="Ajouter un film" @click="addMovie()"></custom-button>
+        </div>
 
-    <button type="button" @click="addMovie()">Ajouter un film</button>
-
-    <poster-list :posterList="posterList"></poster-list>
+        <poster-list :posterList="posterList"></poster-list>
+    </div>
 </template>
 
 <style scoped>
-    
+    p {
+        line-height: 1em;
+        text-align: center;
+    }
+    .title {
+        font-size: 50px;
+    }
+
+    .home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding-block: 20px 60px;
+    }
 </style>
