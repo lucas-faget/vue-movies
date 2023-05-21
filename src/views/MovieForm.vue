@@ -1,7 +1,12 @@
 <script>
     import { Movie } from "../models/Movie";
+    import OutlineText from '@/components/OutlineText.vue';
+    import CustomInput from '@/components/CustomInput.vue';
+    import CustomTextArea from "@/components/CustomTextArea.vue";
+    import CustomButton from '@/components/CustomButton.vue';
 
     export default {
+    components: { OutlineText, CustomInput, CustomTextArea, CustomButton },
         data() {
             return {
                 movieRepository: window.movieRepository
@@ -41,28 +46,66 @@
 </script>
 
 <template>
-    <div>
-        <h1>{{ formTitle }}</h1>
+    <div class="movie-form-container">
+        <div class="movie-form">
+            <div class="title">
+                <outline-text :text="formTitle" fontSize="40" color="white"></outline-text>
+            </div>
 
-        <form @submit.prevent="submitForm">
-            <label for="title">Titre : </label>
-            <input type="text" id="title" name="title" v-model="movie.title" />
-            <br><br>
+            <form @submit.prevent="submitForm">
+                <div class="form-row">
+                    <custom-input width="450" label="Titre du film" v-model="movie.title"></custom-input>
+                    <custom-input width="150" label="Note" v-model="movie.evaluating"></custom-input>
+                </div>
+                <div class="form-row">
+                    <custom-input width="300" label="Année de sortie" v-model="movie.year"></custom-input>
+                    <custom-input width="300" label="Langue" v-model="movie.language"></custom-input>
+                </div>
+                <div class="form-row">
+                    <custom-input width="300" label="Prénom du réalisateur" v-model="movie.filmmaker.firstname"></custom-input>
+                    <custom-input width="300" label="Nom du réalisateur" v-model="movie.filmmaker.lastname"></custom-input>
+                </div>
+                <div class="form-row">
+                    <custom-input width="300" label="Date de naissance du réalisateur" v-model="movie.filmmaker.birthdate"></custom-input>
+                    <custom-input width="300" label="Nationnalité du réalisateur" v-model="movie.filmmaker.nationality"></custom-input>
+                </div>
+                <div class="form-row">
+                    <custom-text-area width="630" label="Synopsis" v-model="movie.synopsis"></custom-text-area>
+                </div>
 
-            <label for="year">Année de sortie : </label>
-            <input type="number" id="year" name="year" v-model="movie.year" />
-            <br><br>
-
-            <label for="filmmaker">Réalisateur : </label>
-            <input type="text" id="filmmaker" name="filmmaker" v-model="movie.filmmaker" />
-            <br><br>
-
-            <label for="synopsis">Synopsis : </label>
-            <textarea id="synopsis" name="synopsis" rows="5" cols="30" v-model="movie.synopsis"></textarea>
-            <br><br>
-
-            <input type="submit" value="Enregistrer" />
-        </form>
+                <div class="button">
+                    <custom-button text="Enregistrer"></custom-button>
+                </div>
+            </form>
+        </div>
     </div>
 </template>
+
+<style scoped>
+    .movie-form-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .movie-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 30px;
+    }
+
+    .title {
+        align-self: center;
+        margin-block: 50px;
+    }
+
+    .button {
+        display: flex;
+        justify-content: flex-end;
+    }
+</style>
   

@@ -9,7 +9,7 @@
             return {
                 movieRepository: window.movieRepository,
                 search: "",
-                posterList: ["interstellar.jpg", "seul-sur-mars.jpg", "interstellar.jpg", "ad-astra.jpg", "interstellar.jpg"]
+                posterList: ["la-sociologie-est-un-sport-de-combat.jpg", "seul-sur-mars.jpg", "interstellar.jpg", "ad-astra.jpg", "bac-nord.jpg"]
             }
         },
         computed: {

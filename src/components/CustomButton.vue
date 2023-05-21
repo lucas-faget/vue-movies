@@ -1,8 +1,4 @@
 <script>
-    /* 
-        Author: Yuhomyan
-        https://codepen.io/yuhomyan/pen/OJMejWJ
-    */
     export default {
         name: 'CustomButton',
         props: ['text']
@@ -10,7 +6,7 @@
 </script>
 
 <template>
-    <button class="custom-btn btn">
+    <button class="custom-btn btn" type="submit">
         {{ text }}
     </button>
 </template>

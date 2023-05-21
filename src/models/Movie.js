@@ -1,3 +1,5 @@
+import { Filmmaker } from "./Filmmaker";
+
 export class Movie
 {
     id;
@@ -9,7 +11,7 @@ export class Movie
     evaluating;
     imageUrl;
 
-    constructor(id = 0, title = "", year = "", language = "", filmmaker = null, synopsis = "", evaluating = 0, imageUrl = null) {
+    constructor(id = 0, title = "", year = "", language = "", filmmaker = new Filmmaker(), synopsis = "", evaluating = 0, imageUrl = null) {
         this.id = id;
         this.title = title;
         this.year = year;
