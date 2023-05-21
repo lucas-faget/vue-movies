@@ -4,9 +4,10 @@
     import CustomInput from '@/components/CustomInput.vue';
     import CustomTextArea from "@/components/CustomTextArea.vue";
     import CustomButton from '@/components/CustomButton.vue';
+import StarRating from '@/components/StarRating.vue';
 
     export default {
-    components: { OutlineText, CustomInput, CustomTextArea, CustomButton },
+    components: { OutlineText, CustomInput, CustomTextArea, CustomButton, StarRating },
         data() {
             return {
                 movieRepository: window.movieRepository
@@ -55,7 +56,8 @@
             <form @submit.prevent="submitForm">
                 <div class="form-row">
                     <custom-input width="450" label="Titre du film" v-model="movie.title"></custom-input>
-                    <custom-input width="150" label="Note" v-model="movie.evaluating"></custom-input>
+                    <star-rating></star-rating>
+                    <!-- <custom-input width="150" label="Note" v-model="movie.evaluating"></custom-input> -->
                 </div>
                 <div class="form-row">
                     <custom-input width="300" label="Année de sortie" v-model="movie.year"></custom-input>
@@ -95,6 +97,7 @@
 
     .form-row {
         display: flex;
+        justify-content: space-between;
         gap: 30px;
     }
 
