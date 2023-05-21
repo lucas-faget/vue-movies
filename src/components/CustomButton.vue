@@ -6,9 +6,11 @@
 </script>
 
 <template>
-    <button class="custom-btn btn" type="submit">
-        {{ text }}
-    </button>
+    <div>
+        <button class="custom-btn btn" type="submit">
+            {{ text }}
+        </button>
+    </div>
 </template>
 
 <style scoped>

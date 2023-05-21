@@ -35,24 +35,51 @@
         <img class="poster" :src="getMoviePath()" alt="poster" />
 
         <div class="details">
-            <h1>Details</h1>
-            <br><br>
-            
-            Titre : {{ movie.title }}
-            <br><br>
-            Année de sortie : {{ movie.year }}
-            <br><br>
-            Réalisateur : {{ movie.filmmaker }}
-            <br><br>
-            Synopsis : {{ movie.synopsis }}
-            <br><br>
+            <div class="details-row">
+                <div class="details-group">
+                    <h1>Titre du film</h1>
+                    <div class="line"></div>
+                    <p>{{ movie.title }}</p> 
+                </div>
 
-            <router-link :to="'/movies/' + movie.id + '/edit'">
-                <custom-button text="Editer"></custom-button>
-            </router-link>
-            <br><br>
+                <div class="details-group">
+                    <h1>Année de sortie</h1>
+                    <div class="line"></div>
+                    <p>{{ movie.year }}</p> 
+                </div>
+            </div>
 
-            <custom-button text="Supprimer" @click="deleteMovie(movie.id)"></custom-button>
+            <div class="details-row">
+                <div class="details-group">
+                    <h1>Réalisateur</h1>
+                    <div class="line"></div>
+                    <p>{{ movie.filmmaker }}</p> 
+                </div>
+
+                <div class="details-group">
+                    <h1>Langue</h1>
+                    <div class="line"></div>
+                    <p>{{ movie.language }}</p> 
+                </div>
+            </div>
+
+            <div class="details-group">
+                <h1>Synopsis</h1>
+                <div class="line"></div>
+                <p>{{ movie.synopsis }}</p> 
+            </div>
+
+            <div class="details-row">
+                <div class="details-group">
+                    <router-link :to="'/movies/' + movie.id + '/edit'">
+                        <custom-button text="Editer"></custom-button>
+                    </router-link>
+                </div>
+
+                <div class="details-group">
+                    <custom-button text="Supprimer" @click="deleteMovie(movie.id)"></custom-button>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -67,6 +94,33 @@
     }
 
     .details {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
         padding: 50px;
+    }
+
+    .details-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .details-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .details-group > h1 {
+        color: var(--color-gold);
+        font-size: 30px;
+        font-family: "Dancing Script", cursive;
+    }
+
+    .details-group > .line {
+        background: var(--color-gold);
+        height: 2px;
+        width: 50px;
     }
 </style>
