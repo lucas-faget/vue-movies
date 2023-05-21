@@ -38,6 +38,7 @@
         border: none;
         border-bottom: 1px solid #757575;
         resize: vertical;
+        min-height: 50px;
     }
 
     textarea:focus {

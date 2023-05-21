@@ -8,17 +8,17 @@ export class Movie
     language;
     filmmaker;
     synopsis;
-    evaluating;
+    rating;
     imageUrl;
 
-    constructor(id = 0, title = "", year = "", language = "", filmmaker = new Filmmaker(), synopsis = "", evaluating = 0, imageUrl = null) {
+    constructor(id = 0, title = "", year = "", language = "", filmmaker = new Filmmaker(), synopsis = "", rating = 0, imageUrl = null) {
         this.id = id;
         this.title = title;
         this.year = year;
         this.language = language;
         this.filmmaker = filmmaker;
         this.synopsis = synopsis;
-        this.evaluating = evaluating;
+        this.rating = rating;
         this.imageUrl = imageUrl;
     }
 

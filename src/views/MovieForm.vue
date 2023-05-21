@@ -4,7 +4,7 @@
     import CustomInput from '@/components/CustomInput.vue';
     import CustomTextArea from "@/components/CustomTextArea.vue";
     import CustomButton from '@/components/CustomButton.vue';
-import StarRating from '@/components/StarRating.vue';
+    import StarRating from '@/components/StarRating.vue';
 
     export default {
     components: { OutlineText, CustomInput, CustomTextArea, CustomButton, StarRating },
@@ -49,15 +49,14 @@ import StarRating from '@/components/StarRating.vue';
 <template>
     <div class="movie-form-container">
         <div class="movie-form">
-            <div class="title">
+            <div class="form-title">
                 <outline-text :text="formTitle" fontSize="40" color="white"></outline-text>
             </div>
 
             <form @submit.prevent="submitForm">
                 <div class="form-row">
                     <custom-input width="450" label="Titre du film" v-model="movie.title"></custom-input>
-                    <star-rating></star-rating>
-                    <!-- <custom-input width="150" label="Note" v-model="movie.evaluating"></custom-input> -->
+                    <star-rating v-model="movie.rating"></star-rating>
                 </div>
                 <div class="form-row">
                     <custom-input width="300" label="Année de sortie" v-model="movie.year"></custom-input>
@@ -95,15 +94,19 @@ import StarRating from '@/components/StarRating.vue';
         justify-content: center;
     }
 
+    .form-title {
+        align-self: center;
+        margin-top: 50px;
+    }
+
+    form {
+        margin-block: 50px;
+    }
+
     .form-row {
         display: flex;
         justify-content: space-between;
         gap: 30px;
-    }
-
-    .title {
-        align-self: center;
-        margin-block: 50px;
     }
 
     .button {
