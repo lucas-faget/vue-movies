@@ -1,8 +1,9 @@
 <script>
     import CustomButton from '@/components/CustomButton.vue';
+    import RadialProgressBar from '@/components/RadialProgressBar.vue';
 
     export default {
-        components: { CustomButton },
+        components: { CustomButton, RadialProgressBar },
         data() {
             return {
                 movieRepository: window.movieRepository,
@@ -35,6 +36,8 @@
         <img class="poster" :src="getMoviePath()" alt="poster" />
 
         <div class="details">
+            <radial-progress-bar></radial-progress-bar>
+
             <div class="details-row">
                 <div class="details-group">
                     <h1>Titre du film</h1>
