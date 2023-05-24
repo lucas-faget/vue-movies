@@ -9,9 +9,9 @@ export class Movie
     filmmaker;
     synopsis;
     rating;
-    imageUrl;
+    imagePath;
 
-    constructor(id = 0, title = "", year = "", language = "", filmmaker = new Filmmaker(), synopsis = "", rating = 0, imageUrl = null) {
+    constructor(id = 0, title = "", year = "", language = "", filmmaker = new Filmmaker(), synopsis = "", rating = 0, image = null) {
         this.id = id;
         this.title = title;
         this.year = year;
@@ -19,7 +19,7 @@ export class Movie
         this.filmmaker = filmmaker;
         this.synopsis = synopsis;
         this.rating = rating;
-        this.imageUrl = imageUrl;
+        this.imagePath = image ? `posters/${image}` : null;
     }
 
     isFound(search) {

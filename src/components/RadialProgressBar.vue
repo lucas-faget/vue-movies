@@ -1,11 +1,11 @@
 <script>
     export default {
         name: 'RadialProgressBar',
-        props: ['value'],
+        props: ['progress'],
 		data() {
 			return {
-				max: 0.7,
-				progress: 0.0,
+				maxProgress: this.progress < 0 ? 0 : this.progress > 1 ? 1 : this.progress,
+				currentProgress: 0.0,
 				pathData: "M 0 0"
 			}
 		},
@@ -33,14 +33,14 @@
 			}
 		},
 		mounted() {
-			this.drawProgress(this.progress);
+			this.drawProgress(this.currentProgress);
 
 			let interval = window.setInterval(() => {
-				this.progress = this.progress + 0.01;
-				if (this.progress >= this.max) {
+				this.currentProgress = this.currentProgress + 0.01;
+				if (this.currentProgress >= this.maxProgress) {
 					window.clearInterval(interval);
 				}
-				this.drawProgress(this.progress);
+				this.drawProgress(this.currentProgress);
 			}, 10);
 		}
     }

@@ -6,7 +6,7 @@
         computed: {
             widthStyle() {
                 return {
-                    width: `${this.width ?? 300}px`
+                    width: this.width ? `${this.width}px` : "100%"
                 }
             }
         }

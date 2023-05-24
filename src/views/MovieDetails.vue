@@ -23,9 +23,6 @@
             deleteMovie(id) {
                 this.movieRepository.deleteMovieById(id);
                 this.$router.push({ name: 'movie-list' });
-            },
-            getMoviePath() {
-                return "posters/" + this.movie.imageUrl;
             }
         }
     }
@@ -33,10 +30,10 @@
 
 <template>
     <div class="movie-details" v-if="movie">
-        <img class="poster" :src="getMoviePath()" alt="poster" />
+        <img class="poster" :src="movie.imagePath" alt="poster" />
 
         <div class="details">
-            <radial-progress-bar></radial-progress-bar>
+            <radial-progress-bar :progress="movie.rating / 10"></radial-progress-bar>
 
             <div class="details-row">
                 <div class="details-group">
