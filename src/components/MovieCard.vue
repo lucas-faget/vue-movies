@@ -12,7 +12,9 @@
     <div class="movie-card">
         <img class="poster" :src="movie.imagePath" :alt="movie.title" />
         <div class="banner">
-            <p class="title">{{ movie.title }}</p>
+            <div class="title">
+                <p>{{ movie.title }}</p>
+            </div>
             <div class="line"></div>
             <div class="filmmaking">
                 <p class="text-with-icon">
@@ -59,15 +61,14 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 10px;
+        gap: 15px;
         width: 100%;
-        height: 30%;
         padding: 15px;
-        transform: translateY(100%);
+        transform: translateY(50%);
         transition: transform 0.3s ease;
     }
 
-    .title {
+    .title > p {
         font-family: Anton;
         font-size: 20px;
     }
