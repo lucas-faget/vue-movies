@@ -76,7 +76,7 @@
     .line {
         background: #fff;
         opacity: 0.5;
-        height: 0.5px;
+        height: 1px;
         width: 100%;
     }
 

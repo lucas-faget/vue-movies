@@ -1,0 +1,95 @@
+{
+    "movies": [
+        {
+            "id": 1,
+            "title": "Interstellar",
+            "year": "2014",
+            "language": "Anglais",
+            "filmmaker": {
+            "firstname": "Christopher",
+            "lastname": "Nolan",
+            "nationality": "Britanique",
+            "birthdate": "30/07/1970"
+            },
+            "synopsis": "Dans un proche futur, la Terre est devenue hostile pour l'homme. Les tempêtes de sable sont fréquentes et il n'y a plus que le maïs qui peut être cultivé, en raison d'un sol trop aride. Cooper est un pilote, recyclé en agriculteur, qui vit avec son fils et sa fille dans la ferme familiale. Lorsqu'une force qu'il ne peut expliquer lui indique les coordonnées d'une division secrète de la NASA, il est alors embarqué dans une expédition pour sauver l'humanité.",
+            "rating": 10,
+            "imagePath": "interstellar.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Seul sur Mars",
+            "year": "2015",
+            "language": "Anglais",
+            "filmmaker": {
+            "firstname": "Ridley",
+            "lastname": "Scott",
+            "nationality": "Britanique",
+            "birthdate": "30/11/1937"
+            },
+            "synopsis": "Lors d'une expédition sur Mars, l'astronaute Mark Watney est laissé pour mort par ses coéquipiers, une tempête les ayant obligés à décoller en urgence. Mais Mark a survécu et il est désormais seul, sans moyen de repartir, sur une planète hostile. Il va devoir faire appel à son intelligence et son ingéniosité pour tenter de survivre et trouver un moyen de contacter la Terre.",
+            "rating": 8,
+            "imagePath": "seul-sur-mars.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Ad Astra",
+            "year": "2019",
+            "language": "Anglais",
+            "filmmaker": {
+                "firstname": "James",
+                "lastname": "Gray",
+                "nationality": "Americain",
+                "birthdate": "14/04/1969"
+            },
+            "synopsis": "L'astronaute Roy McBride s'aventure jusqu'aux confins du système solaire à la recherche de son père disparu et pour résoudre un mystère qui menace la survie de notre planète. Lors de son voyage, il sera confronté à des révélations mettant en cause la nature même de l'existence humaine, et notre place dans l'univers.",
+            "rating": 7,
+            "imagePath": "ad-astra.jpg"
+        },
+        {
+            "id": 4,
+            "title": "First Man",
+            "year": "2018",
+            "language": "Anglais",
+            "filmmaker": {
+                "firstname": "Damien",
+                "lastname": "Chazelle",
+                "nationality": "Francais",
+                "birthdate": "19/01/1985"
+            },
+            "synopsis": "Pilote jugé un peu distrait par ses supérieurs en 1961, Neil Armstrong est, le 21 juillet 1969, le premier homme à marcher sur la lune. Durant huit ans, il subit un entraînement de plus en plus difficile, assumant courageusement tous les risques d'un voyage vers l'inconnu total. Meurtri par des épreuves personnelles qui laissent des traces indélébiles, Armstrong tente d'être un mari aimant auprès d'une femme qui l'avait épousé en espérant une vie normale.",
+            "rating": 7,
+            "imagePath": "first-man.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Gravity",
+            "year": "2013",
+            "language": "Anglais",
+            "filmmaker": {
+                "firstname": "Alfonso",
+                "lastname": "Cuaron",
+                "nationality": "Mexicain",
+                "birthdate": "28/11/1961"
+            },
+            "synopsis": "En mission à bord de la navette Explorer, l'astronaute Matt Kowalski et la docteure Ryan Stone, experte en ingénierie médicale, sortent de l'appareil afin d'effectuer des réparations sur le télescope Hubble. Bientôt, l'un et l'autre sont pris dans une gigantesque tempête de débris provenant de la destruction d'un satellite. Seuls survivants de leur équipage, les deux astronautes doivent à tout prix rejoindre la station spatiale internationale pour revenir sains et saufs sur Terre.",
+            "rating": 6,
+            "imagePath": "gravity.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Moon Fall",
+            "year": "2022",
+            "language": "Anglais",
+            "filmmaker": {
+                "firstname": "Roland",
+                "lastname": "Emmerich",
+                "nationality": "Americain",
+                "birthdate": "10/11/1955"
+            },
+            "synopsis": "Une force mystérieuse provoque la chute de la Lune, qui menace de s'écraser sur la Terre. L'ancienne astronaute, Jo Fowler pense avoir la solution pour empêcher cette catastrophe, mais peu de gens croient en elle. Seuls un astronaute qu'elle a connu autrefois, Brian Harper, et un théoricien du complot, K.C. Houseman sont de son côté. Le trio va alors tenter une mission impossible dans l'espace.",
+            "rating": 5,
+            "imagePath": "moonfall.jpg"
+        }
+    ]
+}
+  
