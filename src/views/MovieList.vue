@@ -1,9 +1,10 @@
 <script>
     import OutlineText from '@/components/OutlineText.vue'
     import CustomInput from '@/components/CustomInput.vue'
+    import MovieCard from '@/components/MovieCard.vue'
 
     export default {
-        components: { OutlineText, CustomInput },
+        components: { OutlineText, CustomInput, MovieCard },
         data() {
             return {
                 movieRepository: window.movieRepository,
@@ -32,13 +33,11 @@
             </div>
             
             <div class="movie-list-content">
-                <template v-for="movie in filteredMovies" v-bind:key="movie.title">
-                    <div class="movie-card">
-                        <router-link :to="'/movies/' + movie.id">
-                            <img class="poster" :src="movie.imagePath" :alt="movie.title" />
-                        </router-link>
-                    </div>
-                </template>
+                <div v-for="movie in filteredMovies" v-bind:key="movie.title">
+                    <router-link :to="'/movies/' + movie.id">
+                        <movie-card :movie="movie"></movie-card>
+                    </router-link>
+                </div>
             </div>
         </div>
     </div>
@@ -68,15 +67,5 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: 50px;
-    }
-
-    .movie-card {
-        height: 420px;
-        width: 310px;
-    }
-
-    .poster {
-        height: 100%;
-        width: 100%;
     }
 </style>
