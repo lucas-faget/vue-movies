@@ -9,7 +9,7 @@ export class Movie
     filmmaker;
     synopsis;
     rating;
-    imagePath;
+    image;
 
     constructor(id = 0, title = "", year = "", language = "", filmmaker = new Filmmaker(), synopsis = "", rating = 0, image = null) {
         this.id = id;
@@ -19,7 +19,7 @@ export class Movie
         this.filmmaker = filmmaker;
         this.synopsis = synopsis;
         this.rating = rating;
-        this.imagePath = image ? `posters/${image}` : null;
+        this.image = image;
     }
 
     isFound(search) {
@@ -28,6 +28,10 @@ export class Movie
         return this.title.toLowerCase().includes(search)
             || this.year.toLowerCase().includes(search)
             || this.filmmaker.toString().toLowerCase().includes(search);
+    }
+
+    getImagePath() {
+        return this.image ? `posters/${this.image}` : null;
     }
 
     toString() {

@@ -2,7 +2,6 @@
     export default {
         name: 'CustomInput',
         props: ['width', 'label', 'modelValue'],
-        emits: ['update:modelValue'],
         computed: {
             widthStyle() {
                 return {

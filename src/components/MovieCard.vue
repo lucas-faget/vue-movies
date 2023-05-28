@@ -10,7 +10,7 @@
 
 <template>
     <div class="movie-card">
-        <img class="poster" :src="movie.imagePath" :alt="movie.title" />
+        <img class="poster" :src="movie.getImagePath()" :alt="movie.title" />
         <div class="banner">
             <div class="title">
                 <p>{{ movie.title }}</p>

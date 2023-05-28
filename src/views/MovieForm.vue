@@ -5,12 +5,14 @@
     import CustomTextArea from "@/components/CustomTextArea.vue";
     import CustomButton from '@/components/CustomButton.vue';
     import StarRating from '@/components/StarRating.vue';
+    import FileUploadInput from '@/components/FileUploadInput.vue';
 
     export default {
-    components: { OutlineText, CustomInput, CustomTextArea, CustomButton, StarRating },
+    components: { OutlineText, CustomInput, CustomTextArea, CustomButton, StarRating, FileUploadInput },
         data() {
             return {
-                movieRepository: window.movieRepository
+                movieRepository: window.movieRepository,
+                imageFile: null
             };
         },
         computed: {
@@ -32,16 +34,31 @@
             }
         },
         methods: {
+            uploadFile() {
+                const formData = new FormData();
+                formData.append('file', this.imageFile);
+
+                // fetch('/posters', {
+                //     method: 'POST',
+                //     body: formData
+                // })
+                // .then(response => {
+                //     this.movie.image = this.imageFile.name;
+                //     console.log(this.movie);
+                //     console.log(response)
+                // })
+                // .catch(error => {
+                //     console.log(error)
+                // });
+            },
             submitForm() {
                 if (this.movieId) {
                     this.movieRepository.updateMovie(this.movie);
                 } else {
                     this.movieRepository.createMovie(this.movie);
                 }
-
-                // redirect to route named movie-list
-                this.$router.push({ name: "movie-list" });
-            },
+                this.uploadFile();
+            }
         },
     };
 </script>
@@ -72,6 +89,10 @@
                 </div>
                 <div class="form-row">
                     <custom-text-area width="630" label="Synopsis" v-model="movie.synopsis"></custom-text-area>
+                </div>
+
+                <div class="form-row">
+                    <file-upload-input @update:file="imageFile = $event"></file-upload-input>
                 </div>
 
                 <div class="button">
@@ -114,4 +135,3 @@
         justify-content: flex-end;
     }
 </style>
-  

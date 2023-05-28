@@ -20,7 +20,7 @@
         color: #000;
         border-radius: 5px;
         padding: 10px 25px;
-        font-family: cursive, sans-serif;
+        font-family: Anton;
         font-weight: 500;
         background: transparent;
         cursor: pointer;

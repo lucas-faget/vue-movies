@@ -30,7 +30,7 @@
 
 <template>
     <div class="movie-details" v-if="movie">
-        <img class="poster" :src="movie.imagePath" alt="poster" />
+        <img class="poster" :src="movie.getImagePath()" alt="poster" />
 
         <div class="details">
             <radial-progress-bar :progress="movie.rating / 10"></radial-progress-bar>
