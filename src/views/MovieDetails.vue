@@ -37,10 +37,14 @@
 
 <template>
     <div class="movie-details" v-if="movie">
-        <img class="poster" :src="movie.getImagePath()" alt="poster" />
+        <div class="poster">
+            <img class="image" :src="movie.getImagePath()" :alt="movie.title" />
+        </div>
 
         <div class="details">
-            <radial-progress-bar :progress="getProgress(movie.rating)" :value="movie.rating" :label="ratingLabel"></radial-progress-bar>
+            <div class="rating-container">
+                <radial-progress-bar :progress="getProgress(movie.rating)" :value="movie.rating" :label="ratingLabel"></radial-progress-bar>
+            </div>
 
             <div class="details-row">
                 <div class="details-group">
@@ -94,17 +98,41 @@
 <style scoped>
     .movie-details {
         display: flex;
+        gap: 50px;
+        padding: 50px;
+    }
+
+    @media only screen and (max-width: 900px) {
+        .movie-details {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rating-container {
+            display: flex;
+            justify-content: center;
+        }
     }
 
     .poster {
-        height: calc(100vh - 80px);
+        background: hsl(0, 0%, 20%);
+        height: 500px;
+        aspect-ratio: 3 / 4;
+    }
+
+    .image {
+        height: 100%;
+        width: 100%;
     }
 
     .details {
         display: flex;
         flex-direction: column;
         gap: 30px;
-        padding: 50px;
+    }
+
+    .rating-container {
+        margin-bottom: 20px;
     }
 
     .details-row {

@@ -75,6 +75,7 @@
   
 <style scoped>
 	.progress-radial {
+		position: absolute;
 		background: hsl(0, 0%, 20%);
 		border-radius: 50%;
 	}
@@ -87,7 +88,7 @@
 	}
 
 	.text {
-		position: absolute;
+		position: relative;
 		width: 100px;
 		height: 100px;
 		display: flex;
