@@ -2,6 +2,8 @@ import { Filmmaker } from "./Filmmaker";
 
 export class Movie
 {
+    static maxRating = 10;
+    
     id;
     title;
     year;

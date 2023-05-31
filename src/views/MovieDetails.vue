@@ -1,4 +1,5 @@
 <script>
+    import { Movie } from '@/models/Movie';
     import CustomButton from '@/components/CustomButton.vue';
     import RadialProgressBar from '@/components/RadialProgressBar.vue';
 
@@ -6,7 +7,7 @@
         components: { CustomButton, RadialProgressBar },
         data() {
             return {
-                movieRepository: window.movieRepository,
+                movieRepository: window.movieRepository
             }
         },
         computed: {
@@ -17,12 +18,18 @@
                     }
                 }
                 return null;
+            },
+            ratingLabel() {
+                return `/${Movie.maxRating}`;
             }
         },
         methods: {
             deleteMovie(id) {
                 this.movieRepository.deleteMovieById(id);
                 this.$router.push({ name: 'movie-list' });
+            },
+            getProgress(rating) {
+                return rating / Movie.maxRating;
             }
         }
     }
@@ -33,19 +40,19 @@
         <img class="poster" :src="movie.getImagePath()" alt="poster" />
 
         <div class="details">
-            <radial-progress-bar :progress="movie.rating / 10"></radial-progress-bar>
+            <radial-progress-bar :progress="getProgress(movie.rating)" :value="movie.rating" :label="ratingLabel"></radial-progress-bar>
 
             <div class="details-row">
                 <div class="details-group">
                     <h1>Titre du film</h1>
                     <div class="line"></div>
-                    <p>{{ movie.title }}</p> 
+                    <p>{{ movie.title }}</p>
                 </div>
 
                 <div class="details-group">
                     <h1>Année de sortie</h1>
                     <div class="line"></div>
-                    <p>{{ movie.year }}</p> 
+                    <p>{{ movie.year }}</p>
                 </div>
             </div>
 
@@ -53,20 +60,20 @@
                 <div class="details-group">
                     <h1>Réalisateur</h1>
                     <div class="line"></div>
-                    <p>{{ movie.filmmaker }}</p> 
+                    <p>{{ movie.filmmaker }}</p>
                 </div>
 
                 <div class="details-group">
                     <h1>Langue</h1>
                     <div class="line"></div>
-                    <p>{{ movie.language }}</p> 
+                    <p>{{ movie.language }}</p>
                 </div>
             </div>
 
             <div class="details-group">
                 <h1>Synopsis</h1>
                 <div class="line"></div>
-                <p>{{ movie.synopsis }}</p> 
+                <p>{{ movie.synopsis }}</p>
             </div>
 
             <div class="details-row">

@@ -1,7 +1,7 @@
 <script>
     export default {
         name: 'RadialProgressBar',
-        props: ['progress'],
+        props: ['progress', 'value', 'label'],
 		data() {
 			return {
 				maxProgress: this.progress < 0 ? 0 : this.progress > 1 ? 1 : this.progress,
@@ -62,6 +62,15 @@
 			</path>
 		</g>
 	</svg>
+
+	<div class="text">
+		<span class="value">
+			{{ value }}
+		</span>
+		<span class="label">
+			{{ label }}
+		</span>
+	</div>
 </template>
   
 <style scoped>
@@ -75,5 +84,26 @@
 
 	.progress-radial-bar {
 		fill: var(--color-gold); 
+	}
+
+	.text {
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 3px;
+	}
+
+	.value {
+		color: hsl(0, 0%, 95%);
+		font-size: 30px;
+	}
+
+	.label {
+		color: hsl(0, 0%, 70%);
+		font-size: 15px;
+		padding-bottom: 10px;
 	}
 </style>

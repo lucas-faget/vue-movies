@@ -26,7 +26,7 @@ export class MovieRepository
                     filmmaker,
                     movie.synopsis,
                     movie.rating,
-                    movie.imagePath
+                    movie.image
                 );
             });
 
