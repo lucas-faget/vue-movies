@@ -14,7 +14,7 @@
 
 <template>
     <div class="group">      
-        <textarea :value="modelValue" @textarea="$emit('update:modelValue', $event.target.value)" rows="5" :style="widthStyle" required></textarea>
+        <textarea :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" rows="5" :style="widthStyle" required></textarea>
         <span class="highlight"></span>
         <span class="bar" :style="widthStyle"></span>
         <label>{{ label }}</label>
