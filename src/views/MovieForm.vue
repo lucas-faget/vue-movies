@@ -5,10 +5,9 @@
     import CustomTextArea from "@/components/CustomTextArea.vue";
     import CustomButton from '@/components/CustomButton.vue';
     import StarRating from '@/components/StarRating.vue';
-    import FileUploadInput from '@/components/FileUploadInput.vue';
 
     export default {
-    components: { OutlineText, CustomInput, CustomTextArea, CustomButton, StarRating, FileUploadInput },
+    components: { OutlineText, CustomInput, CustomTextArea, CustomButton, StarRating },
         data() {
             return {
                 movieRepository: window.movieRepository,
@@ -35,8 +34,8 @@
         },
         methods: {
             uploadFile() {
-                const formData = new FormData();
-                formData.append('file', this.imageFile);
+                // const formData = new FormData();
+                // formData.append('file', this.imageFile);
 
                 // fetch('/posters', {
                 //     method: 'POST',
@@ -54,10 +53,12 @@
             submitForm() {
                 if (this.movieId) {
                     this.movieRepository.updateMovie(this.movie);
+                    this.$router.push({ name: 'movie-details', params: { id: this.movieId } });
+
                 } else {
                     this.movieRepository.createMovie(this.movie);
+                    this.$router.push({ name: 'movie-list' });
                 }
-                this.uploadFile();
             }
         },
     };
@@ -91,9 +92,9 @@
                     <custom-text-area width="630" label="Synopsis" v-model="movie.synopsis"></custom-text-area>
                 </div>
 
-                <div class="form-row">
+                <!-- <div class="form-row">
                     <file-upload-input @update:file="imageFile = $event"></file-upload-input>
-                </div>
+                </div> -->
 
                 <div class="button">
                     <custom-button text="Enregistrer"></custom-button>

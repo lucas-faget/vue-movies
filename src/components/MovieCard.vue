@@ -32,6 +32,7 @@
 
 <style scoped>
     .movie-card {
+        background: hsl(0, 0%, 20%);
         position: relative;
         height: 420px;
         width: 310px;

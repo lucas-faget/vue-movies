@@ -31,10 +31,9 @@
     <div class="home">
         <div class="title">
             <p>
-                <outline-text text="BIENVENUE SUR " fontSize="50" color="white"></outline-text>
-                <outline-text text="VUE-MOVIES" fontSize="50" color="gold"></outline-text>
+                <outline-text text="MOVIE" fontSize="100" color="white"></outline-text>
                 <br />
-                <outline-text text="Votre base de données de films." fontSize="46" color="white"></outline-text>
+                <outline-text text="DATABASE" fontSize="64" color="gold"></outline-text>
             </p>
             <custom-button text="Voir les films" @click="goToMovieList()"></custom-button>
         </div>
