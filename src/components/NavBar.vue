@@ -10,7 +10,7 @@ import OutlineText from './OutlineText.vue'
     <nav class="nav-bar">
         <div class="logo">
             <router-link to="/" style="text-decoration: none;">
-                <outline-text text="HOME" fontSize="30" color="white"></outline-text>
+                <outline-text text="MOVUE" fontSize="30" color="white"></outline-text>
             </router-link>
         </div>
         <ul class="menu">

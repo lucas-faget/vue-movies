@@ -31,9 +31,9 @@
     <div class="home">
         <div class="title">
             <p>
-                <outline-text text="MOVIE" fontSize="100" color="white"></outline-text>
+                <outline-text text="MOVUE" fontSize="100" color="white"></outline-text>
                 <br />
-                <outline-text text="DATABASE" fontSize="64" color="gold"></outline-text>
+                <outline-text text="DATABASE" fontSize="73" color="gold"></outline-text>
             </p>
             <custom-button text="Voir les films" @click="goToMovieList()"></custom-button>
         </div>
@@ -44,9 +44,10 @@
 
 <style scoped>
     p {
-        line-height: 1em;
+        line-height: 1.1em;
         text-align: center;
     }
+    
     .title {
         font-size: 50px;
     }

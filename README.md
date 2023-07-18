@@ -1,5 +1,5 @@
-# vue-movies
-Movie database using Vue 3
+# Movue
+A minimalist movie database using Vue 3
 
 ## Project setup
 ```
@@ -20,9 +20,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Features
-Among the requested features, file upload is not functional
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -13,7 +13,7 @@ export class Movie
     rating;
     image;
 
-    constructor(id = 0, title = "", year = "", language = "", filmmaker = new Filmmaker(), synopsis = "", rating = 0, image = null) {
+    constructor(id = 0, title = "", year = "", language = "", filmmaker = new Filmmaker(), synopsis = "", rating = 0, image = "movie-poster-template.jpg") {
         this.id = id;
         this.title = title;
         this.year = year;

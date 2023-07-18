@@ -10,8 +10,7 @@
     components: { OutlineText, CustomInput, CustomTextArea, CustomButton, StarRating },
         data() {
             return {
-                movieRepository: window.movieRepository,
-                imageFile: null
+                movieRepository: window.movieRepository
             };
         },
         computed: {
@@ -33,29 +32,13 @@
             }
         },
         methods: {
-            uploadFile() {
-                // const formData = new FormData();
-                // formData.append('file', this.imageFile);
-
-                // fetch('/posters', {
-                //     method: 'POST',
-                //     body: formData
-                // })
-                // .then(response => {
-                //     this.movie.image = this.imageFile.name;
-                //     console.log(this.movie);
-                //     console.log(response)
-                // })
-                // .catch(error => {
-                //     console.log(error)
-                // });
-            },
             submitForm() {
                 if (this.movieId) {
                     this.movieRepository.updateMovie(this.movie);
                     this.$router.push({ name: 'movie-details', params: { id: this.movieId } });
 
                 } else {
+                    console.log(this.movie);
                     this.movieRepository.createMovie(this.movie);
                     this.$router.push({ name: 'movie-list' });
                 }
@@ -91,10 +74,6 @@
                 <div class="form-row">
                     <custom-text-area width="630" label="Synopsis" v-model="movie.synopsis"></custom-text-area>
                 </div>
-
-                <!-- <div class="form-row">
-                    <file-upload-input @update:file="imageFile = $event"></file-upload-input>
-                </div> -->
 
                 <div class="button">
                     <custom-button text="Enregistrer"></custom-button>
