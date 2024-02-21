@@ -53,6 +53,7 @@
     }
 
     .home {
+        padding-bottom: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;

@@ -34,11 +34,9 @@
 
     .outline-white {
         -webkit-text-stroke: 1px #fff;
-        text-stroke: 1px #fff;
     }
 
     .outline-gold {
         -webkit-text-stroke: 1px var(--color-gold);
-        text-stroke: 1px var(--color-gold);
     }
 </style>
